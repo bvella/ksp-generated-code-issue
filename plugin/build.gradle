@@ -1,0 +1,7 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+}
+
+apply from: "$rootDir/gradle/common.gradle"
+

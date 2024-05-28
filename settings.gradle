@@ -1,0 +1,6 @@
+rootProject.name = 'ksp-issue'
+
+include(':example')
+project(':example').projectDir = file('example')
+include(':plugin')
+project(':plugin').projectDir = file('plugin')

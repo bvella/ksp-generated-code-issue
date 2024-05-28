@@ -1,0 +1,19 @@
+apply from: "$rootDir/gradle/common.gradle"
+apply from: "$rootDir/plugin/src/main/groovy/plugin.groovy"
+
+dependencies {
+    implementation 'io.micronaut:micronaut-runtime:4.4.9'
+//    implementation 'io.micronaut:micronaut-context:4.4.9'
+
+    ksp 'io.micronaut:micronaut-inject-kotlin:4.4.9'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation('io.micronaut.test:micronaut-test-junit5:4.3.0') {
+        exclude group: 'io.micronaut', module: 'micronaut-core'
+        exclude group: 'io.micronaut', module: 'micronaut-inject'
+        exclude group: 'io.micronaut', module: 'micronaut-runtime'
+    }
+    testImplementation 'com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.0.0-1.0.21'
+
+    kspTest 'io.micronaut:micronaut-inject-kotlin:4.4.9'
+}
